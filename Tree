@@ -1,0 +1,74 @@
+#include<stdio.h>
+
+int main()
+{
+	printf_s("Autor: Arkadiusz Marciniak.\n");
+	printf_s("Program rysuje choinke\n");
+	printf_s("Podaj wielkosc choinki od 1 do 5 \n");
+	int wielkosc ;
+	while (scanf_s("%d", &wielkosc)!=1|| getchar() != '\n'||wielkosc<1||wielkosc>5)
+	{
+		printf_s("Blad Danych. Popraw.\n");
+		while (getchar()!='\n')
+		{
+			;
+		}
+	}
+	wielkosc = wielkosc + 5;
+	for (int i = 1; i <= wielkosc; i++)
+	{
+		for (int j = 0; j < wielkosc*2+2 - i; j++)
+		{
+			printf_s(" ");
+		}
+		printf_s("*");
+		for (int n = 1; n < i; n++)
+		{
+
+			printf_s("**");
+		}
+		printf_s("\n");
+	}
+	for (int i = wielkosc-4; i <= wielkosc+2; i++)
+	{
+		for (int j = 0; j < wielkosc * 2 + 2 - i; j++)
+		{
+			printf_s(" ");
+		}
+		printf_s("*");
+		for (int n = 1; n < i; n++)
+		{
+			printf_s("**");
+		}
+		printf_s("\n");
+	}
+	for (int i=wielkosc-3; i <= wielkosc+4; i++)
+	{
+		for (int j = 0; j < wielkosc * 2 + 2 - i; j++)
+		{
+			printf_s(" ");
+		}
+		printf_s("*");
+		for (int n = 1; n < i; n++)
+		{
+			printf_s("**");
+		}
+		printf_s("\n");
+	}
+	for (int b=0;b<2;b++)
+	{
+		for (int j = 0; j < wielkosc * 2 ; j++)
+		{
+			printf_s(" ");
+		}
+	printf_s("|||\n");
+	}
+	for (int i = 0; i < wielkosc * 2+2; i++)
+	{
+		printf_s("--");
+	}
+	
+	printf_s("\nKoniec\n");
+	system("PAUSE");
+	return 0;
+}
